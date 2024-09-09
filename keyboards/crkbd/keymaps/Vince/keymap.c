@@ -23,11 +23,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |-----------+-----------+-----------+------------+-------------+----------|
-      KC_TAB, LSFT_T(KC_A), LCTL_T(KC_S), LGUI_T(KC_D), LALT_T(KC_F), KC_G,       KC_H,   RALT_T(KC_J), RGUI_T(KC_K), RCTL_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT,
+      KC_TAB, SFT_T(KC_A), CTL_T(KC_S), CMD_T(KC_D), OPT_T(KC_F), KC_G,       KC_H,   OPT_T(KC_J), CMD_T(KC_K), CTL_T(KC_L), SFT_T(KC_SCLN), KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |----------+----------+-----------+-------------+-------------+-----------|
       XXXXXXX,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         XXXXXXX, HYPR(KC_NO), KC_SPC,        KC_ENT, MO(1), MO(2)
+                                         XXXXXXX, HYPR_T(KC_NO), KC_SPC,        KC_ENT, MO(1), MO(2)
                                       //`--------------------------'  `--------------------------'
 
   ),
