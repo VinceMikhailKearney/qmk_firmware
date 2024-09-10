@@ -38,13 +38,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define USE_MATRIX_I2C
 // Not sure what the above was about
-#ifdef RGB_MATRIX_ENABLE
-    #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
-    #define ENABLE_RGB_MATRIX_RAINBOW_BEACON
-    #define ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
-    #define ENABLE_RGB_MATRIX_RAINDROPS
-    #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
-#endif
+
+// #ifdef RGB_MATRIX_ENABLE
+//     #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+//     #define ENABLE_RGB_MATRIX_RAINBOW_BEACON
+//     #define ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
+//     #define ENABLE_RGB_MATRIX_RAINDROPS
+//     #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+// #endif
 
 // Standard LEDs
 
