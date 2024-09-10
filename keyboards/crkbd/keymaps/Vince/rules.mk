@@ -1,6 +1,9 @@
-MOUSEKEY_ENABLE = yes    # Mouse keys
-# RGBLIGHT_ENABLE = yes    # Enable WS2812 RGB underlight.
+# MOUSEKEY_ENABLE = yes
+# RGBLIGHT_ENABLE = yes
 RGB_MATRIX_ENABLE = yes
-VIA_ENABLE      = yes    # Enable VIA
+VIA_ENABLE      = yes
 OLED_ENABLE     = no
 LTO_ENABLE      = yes
+
+# Allows quantum keys to configure the tapping term via the keyboard
+DYNAMIC_TAPPING_TERM_ENABLE = yes
