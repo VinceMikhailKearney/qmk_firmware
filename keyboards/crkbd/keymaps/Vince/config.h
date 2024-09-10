@@ -26,11 +26,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Set the delay for the tap/hold behaviour of home rows
 // #define TAP_CODE_DELAY 0
-#define TAPPING_TERM 250
+
+#define TAPPING_TERM 220
+#define QUICK_TERM_TAP 0
 
 // See: https://docs.qmk.fm/tap_hold#permissive-hold
 // Basically, helps the MOD Tap performance for typing fast
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 
 // Matrix LEDs
 
