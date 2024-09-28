@@ -130,6 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
+  // This is not working. The config.h change works, there's 6 layers, but this config isn't picked up, so the rest has to be set in VIA.
   [_NAV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DT_PRNT,                      XXXXXXX, XXXXXXX, KC_UP,  XXXXXXX, XXXXXXX, _______,
