@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+
 // Set the delay for the tap/hold behaviour of home rows
 // #define TAP_CODE_DELAY 0
 
