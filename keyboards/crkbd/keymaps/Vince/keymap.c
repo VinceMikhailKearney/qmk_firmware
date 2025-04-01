@@ -34,7 +34,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   case _QWERTY:
     // Green
     rgblight_enable_noeeprom();
-    rgblight_sethsv_noeeprom(HSV_GREEN);
+    rgblight_sethsv_noeeprom(HSV_PURPLE);
     break;
   case _QWERTY_LHOME:
     // Red
@@ -54,7 +54,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   case _NAV:
     // Blue
     rgblight_enable_noeeprom();
-    rgblight_sethsv_noeeprom(HSV_PURPLE);
+    rgblight_sethsv_noeeprom(HSV_GREEN);
     break;
   default:
     // White
