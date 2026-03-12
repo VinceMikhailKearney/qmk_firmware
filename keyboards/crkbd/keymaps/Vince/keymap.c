@@ -27,6 +27,10 @@ enum corne_layers {
   _MEDIA = 5
 };
 
+enum custom_keycodes {
+  HELLO = SAFE_RANGE,
+};
+
 // Shorthand aliases to keep keymap columns a consistent width
 #define L_LHOM  MO(_QWERTY_LHOME)
 #define L_RHOM  MO(_QWERTY_RHOME)
@@ -78,9 +82,30 @@ enum corne_layers {
 #define ROW_MEDIA_L1 NO_OP, RGB_RMOD, RGB_HUD, RGB_SPD, NO_OP, NO_OP
 #define ROW_MEDIA_R1 NO_OP, KC_MPRV, KC_MPLY, KC_MNXT, NO_OP, NO_OP
 #define ROW_MEDIA_L2 NO_OP, NO_OP, NO_OP, NO_OP, NO_OP, KC_F3
-#define ROW_MEDIA_R2 NO_OP, NO_OP, NO_OP, NO_OP, NO_OP, NO_OP
+#define ROW_MEDIA_R2 NO_OP, NO_OP, NO_OP, NO_OP, NO_OP, HELLO
 #define THUMB_MEDIA_L TRNS, TRNS, KC_SPC
 #define THUMB_MEDIA_R KC_ENT, TRNS, TRNS
+
+// Helper to compose row aliases without tripping macro argument counting.
+#define LAYOUT_ROWS(r0l, r0r, r1l, r1r, r2l, r2r, thl, thr) \
+  LAYOUT_split_3x6_3( \
+    r0l, r0r, \
+    r1l, r1r, \
+    r2l, r2r, \
+    thl, thr \
+  )
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case HELLO:
+      if (record->event.pressed) {
+        SEND_STRING("hello");
+      }
+      return false;
+    default:
+      return true;
+  }
+}
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   rgblight_config_t rgblight_config;
@@ -119,42 +144,42 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_QWERTY] = LAYOUT_split_3x6_3(
+  [_QWERTY] = LAYOUT_ROWS(
     ROW_BASE_L0, ROW_BASE_R0,
     ROW_BASE_L1, ROW_BASE_R1,
     ROW_BASE_L2, ROW_BASE_R2,
     THUMB_BASE_L, THUMB_BASE_R
   ),
 
-  [_QWERTY_LHOME] = LAYOUT_split_3x6_3(
+  [_QWERTY_LHOME] = LAYOUT_ROWS(
     ROW_BASE_L0, ROW_BASE_R0,
     ROW_LHOME_L1, ROW_BASE_R1,
     ROW_BASE_L2, ROW_HOME_R2,
     THUMB_HOME_L, THUMB_HOME_R
   ),
 
-  [_QWERTY_RHOME] = LAYOUT_split_3x6_3(
+  [_QWERTY_RHOME] = LAYOUT_ROWS(
     ROW_BASE_L0, ROW_BASE_R0,
     ROW_BASE_L1, ROW_RHOME_R1,
     ROW_BASE_L2, ROW_HOME_R2,
     THUMB_HOME_L, THUMB_HOME_R
   ),
 
-  [_NUMS] = LAYOUT_split_3x6_3(
+  [_NUMS] = LAYOUT_ROWS(
     ROW_NUMS_L0, ROW_NUMS_R0,
     ROW_NUMS_L1, ROW_NUMS_R1,
     ROW_NUMS_L2, ROW_NUMS_R2,
     THUMB_NUMS_L, THUMB_NUMS_R
   ),
 
-  [_NAV] = LAYOUT_split_3x6_3(
+  [_NAV] = LAYOUT_ROWS(
     ROW_NAV_L0, ROW_NAV_R0,
     ROW_NAV_L1, ROW_NAV_R1,
     ROW_NAV_L2, ROW_NAV_R2,
     THUMB_NAV_L, THUMB_NAV_R
   ),
 
-  [_MEDIA] = LAYOUT_split_3x6_3(
+  [_MEDIA] = LAYOUT_ROWS(
     ROW_MEDIA_L0, ROW_MEDIA_R0,
     ROW_MEDIA_L1, ROW_MEDIA_R1,
     ROW_MEDIA_L2, ROW_MEDIA_R2,
